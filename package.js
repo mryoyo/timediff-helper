@@ -1,6 +1,6 @@
 Package.describe({
   name: 'mryoyo:timediff',
-  version: '1.0.0',
+  version: '1.0.1',
   summary: 'A simple helper that displays duration between now and your another timestamp reactively.',
   git: 'https://github.com/mryoyo/timediff-helper.git',
   documentation: 'README.md'

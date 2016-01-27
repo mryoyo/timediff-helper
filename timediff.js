@@ -20,21 +20,26 @@ if (Meteor.isClient) {
     var _diff = getDiff(from);
     var _adiff = Math.abs(_diff);
     var diff = moment.duration(_adiff);
-    return pretty(diff);
+    var _sign = _diff >= 0 ? '+' : '-';
+    return _sign + pretty(diff);
   });
 
   Template.registerHelper('diffNowNoSign', function (from) {
     var _diff = getDiff(from);
     var _adiff = Math.abs(_diff);
     var diff = moment.duration(_adiff);
-    var _sign = _diff >= 0 ? '+' : '-';
-    return _sign + pretty(diff);
+    return pretty(diff);
   });
 
   Template.registerHelper('diffNowHumanize', function (from) {
     var _diff = getDiff(from);
     var diff = moment.duration(_diff);
     return diff.humanize(true);
+  });
+
+  Template.registerHelper('diffNowMs', function (from) {
+    var _diff = getDiff(from);
+    return _diff;
   });
 
 }
